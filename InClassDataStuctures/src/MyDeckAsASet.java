@@ -14,7 +14,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MyDeckAsASet extends Application {
@@ -30,8 +33,9 @@ public class MyDeckAsASet extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		//Setup UI **********
 		Button next = new Button("Next Card");
-		HBox disp = new HBox(20);
-		disp.getChildren().add(next);
+		final GridPane disp = new GridPane();
+		disp.add(next, 5,6);
+		//disp.getChildren().add(next);
 		next.setOnMouseClicked((new EventHandler<MouseEvent>() {
 	          public void handle(MouseEvent arg0) {
 	              disp.getChildren().add(itr.next());

@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class MyDeckAsAQueue extends Application {
@@ -29,7 +30,8 @@ public class MyDeckAsAQueue extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		//Setup UI **********
 		Button next = new Button("Next Card");
-		HBox disp = new HBox(20);
+		next.setTextFill(Color.RED);
+		final HBox disp = new HBox(20);
 		disp.getChildren().add(next);
 		next.setOnMouseClicked((new EventHandler<MouseEvent>() {
 	          public void handle(MouseEvent arg0) {
